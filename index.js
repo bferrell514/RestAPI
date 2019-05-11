@@ -1,9 +1,15 @@
 const express = require('express');
-const routes = require('./routes/api')
-//set up express app
+const bodyParser = require('body-parser');
+
+// set up express app
 const app = express();
 
-app.use('/api',routes);
+// use body-parser middleware
+app.use(bodyParser.json());
+
+// initialize routes
+app.use('/api', require('./routes/api'));
+
 
 //listen for requests
 const port = process.env.PORT;
