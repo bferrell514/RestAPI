@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/ninjago');
-mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost/ninjago');
+//mongoose.Promise = global.Promise;
 
 // use body-parser middleware
 app.use(bodyParser.json());
@@ -22,6 +22,6 @@ app.use(function(err, req, res, next){
 });
 
 // listen for requests
-app.listen(process.env.port || 4000, function(){
+app.listen(process.env.port || 8080, function(){
     console.log('now listening for requests');
 });
